@@ -12,7 +12,7 @@ public class Medico extends Persona {
         preescribirTratamiento(paciente, tratamiento);
     }
 
-    public void preescribirTratamiento(Paciente paciente, String tratamiento) {
+    private void preescribirTratamiento(Paciente paciente, String tratamiento) {
         // Implementación para prescribir un tratamiento al paciente.
         System.out.println("Prescribiendo tratamineto... " +
                 "(Este metodo solo debe ser utilizado en esta clase, nadie mas lo puede utilizar)");

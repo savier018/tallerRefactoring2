@@ -2,9 +2,9 @@ public class Main{
     static SistemaAtencionMedico sistemaAtencionMedica;
     public static void main(String[] args) {
         inicializar();
-        Paciente paciente = sistemaAtencionMedica.obtenerPaciente("Dario");
-        ServicioMedico servicioMedico = sistemaAtencionMedica.obtenerServicioMedico("Psiquiatria");
-        Medico medico = sistemaAtencionMedica.obtenerMedico("Nohelia");
+        Paciente paciente = (Paciente) sistemaAtencionMedica.obtenerDesdeLista("Dario", "Paciente");
+        ServicioMedico servicioMedico = (ServicioMedico) sistemaAtencionMedica.obtenerDesdeLista("Psiquiatria", "ServicioMedico");
+        Medico medico = (Medico) sistemaAtencionMedica.obtenerDesdeLista("Nohelia", "Medico");
         Consulta consulta = new Consulta(05,05,2002,"12:05",paciente,medico,servicioMedico,"dvasdv","asdvas",null);
         sistemaAtencionMedica.agendarConsulta(paciente,consulta);
     }
