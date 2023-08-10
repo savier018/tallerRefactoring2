@@ -7,11 +7,11 @@ public class Consulta {
     private Medico medico;
     private ServicioMedico servicioMedico;
     private boolean realizada;
-    private String diagnostico;
-    private String tratamiento;
-    private List<String> examenesMedicos;
+    private Diagnostico diagnostico;
+    private Tratamiento tratamiento;
+    private List<ExamenesMedicos> examenesMedicos;
 
-    public Consulta(Paciente paciente, Medico medico, ServicioMedico servicioMedico, String diagnostico, String tratamiento, List<String> examenesMedicos) {
+    public Consulta(Paciente paciente, Medico medico, ServicioMedico servicioMedico, Diagnostico diagnostico, Tratamiento tratamiento, List<String> examenesMedicos) {
         this.fechaHora = LocalDateTime.now();
         this.servicioMedico = servicioMedico;
         this.paciente = paciente;
@@ -47,27 +47,27 @@ public class Consulta {
         this.realizada = realizada;
     }
 
-    public String getDiagnostico() {
+    public Diagnostico getDiagnostico() {
         return diagnostico;
     }
 
-    public void setDiagnostico(String diagnostico) {
+    public void setDiagnostico(Diagnostico diagnostico) {
         this.diagnostico = diagnostico;
     }
 
-    public String getTratamiento() {
+    public Tratamiento getTratamiento() {
         return tratamiento;
     }
 
-    public void setTratamiento(String tratamiento) {
+    public void setTratamiento(Tratamiento tratamiento) {
         this.tratamiento = tratamiento;
     }
 
-    public List<String> getExamenesMedicos() {
+    public List<ExamenesMedicos> getExamenesMedicos() {
         return examenesMedicos;
     }
 
-    public void setExamenesMedicos(List<String> examenesMedicos) {
+    public void setExamenesMedicos(List<ExamenesMedicos> examenesMedicos) {
         this.examenesMedicos = examenesMedicos;
     }
 
