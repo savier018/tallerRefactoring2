@@ -3,6 +3,7 @@ public class ServicioMedico {
     private String descripcion;
     private double costo;
     private int duracion;
+	static final double LIMITE_COSTO = 0;
 
     public ServicioMedico(String nombre, String descripcion, double costo, int duracion) {
         this.nombre = nombre;
@@ -33,7 +34,7 @@ public class ServicioMedico {
     }
 
     public void setCosto(double costo) {
-        if(costo<0){
+        if(costo<LIMITE_COSTO){
             System.out.println("El costo no puede ser menor a 0");
             return;
         }

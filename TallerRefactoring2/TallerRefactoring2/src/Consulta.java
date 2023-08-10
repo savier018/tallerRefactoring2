@@ -1,10 +1,8 @@
 import java.util.List;
+import java.time.LocalDateTime;
 
 public class Consulta {
-    public int dia;
-    public int mes;
-    public int año;
-    private String hora;
+    public LocalDateTime fechaHora;
     private Paciente paciente;
     private Medico medico;
     private ServicioMedico servicioMedico;
@@ -13,11 +11,8 @@ public class Consulta {
     private String tratamiento;
     private List<String> examenesMedicos;
 
-    public Consulta(int dia, int mes, int año, String hora, Paciente paciente, Medico medico, ServicioMedico servicioMedico, String diagnostico, String tratamiento, List<String> examenesMedicos) {
-        this.dia = dia;
-        this.mes = mes;
-        this.año = año;
-        this.hora = hora;
+    public Consulta(Paciente paciente, Medico medico, ServicioMedico servicioMedico, String diagnostico, String tratamiento, List<String> examenesMedicos) {
+        this.fechaHora = LocalDateTime.now();
         this.servicioMedico = servicioMedico;
         this.paciente = paciente;
         this.medico = medico;
@@ -25,11 +20,7 @@ public class Consulta {
     }
 
     public String getHora() {
-        return hora;
-    }
-
-    public void setHora(String hora) {
-        this.hora = hora;
+        return fechaHora.toLocalTime().toString();
     }
 
     public Paciente getPaciente() {

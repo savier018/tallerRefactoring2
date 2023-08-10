@@ -5,23 +5,38 @@ public class SistemaAtencionMedico {
     private List<Paciente> pacientes;
     private List<Medico> medicos;
     private List<ServicioMedico> serviciosMedicos;
+	
+	static final double EDAD_ADULTO_MAYOR = 65;
+	static final double DESCUENTO_ADULTO_MAYOR = 0.25;
 
     public SistemaAtencionMedico() {
         this.pacientes = new ArrayList<>();
         this.medicos = new ArrayList<>();
         this.serviciosMedicos = new ArrayList<>();
     }
+	
+	public getPacientes(){
+		return pacientes;
+	}
+	
+	public getMedicos(){
+		return medicos;
+	}
+	
+	public getServiciosMedicos(){
+		return serviciosMedicos;
+	}
 
     public void agregarPaciente(Paciente paciente) {
-        pacientes.add(paciente);
+        getPacientes().add(paciente);
     }
 
     public void agregarMedico(Medico medico) {
-        medicos.add(medico);
+        getMedicos().add(medico);
     }
 
     public void agregarServicioMedico(ServicioMedico servicioMedico) {
-        serviciosMedicos.add(servicioMedico);
+        getServiciosMedicos().add(servicioMedico);
     }
 
     public void agendarConsulta(Paciente paciente, Consulta consulta){
@@ -32,19 +47,19 @@ public class SistemaAtencionMedico {
 
     public double calcularValorFinalConsulta(Consulta consulta, Paciente paciente){
         double valorARestar = 0;
-        if(paciente.getEdad()>=65){ 
-            valorARestar = consulta.getServicioMedico().getCosto() * 0.25; //0.25 es el descuento para adultos mayores
+        if(paciente.getEdad()>=EDAD_ADULTO_MAYOR){ 
+            valorARestar = consulta.getServicioMedico().getCosto() * DESCUENTO_ADULTO_MAYOR; //0.25 es el descuento para adultos mayores
         }
         return consulta.getServicioMedico().getCosto() - valorARestar;
     }
     public Object obtenerDesdeLista(String nombre, String tipo) {
         List lista;
         if(tipo.equals("Paciente")){
-            lista = pacientes;
+            lista = getPacientes();
         } else if (tipo.equals("Medico")) {
-            lista = medicos;
+            lista = getMedicos();
         } else {
-            lista = serviciosMedicos;
+            lista = getServiciosMedicos();
         }
         for (Object elemento : lista) {
             if (elemento instanceof Paciente && ((Paciente) elemento).getNombre().equals(nombre)) {

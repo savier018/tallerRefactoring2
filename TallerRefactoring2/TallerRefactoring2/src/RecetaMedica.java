@@ -15,7 +15,7 @@ public class RecetaMedica {
     }
 
     public void agregarMedicamento(String medicamento) {
-        medicamentos.add(medicamento);
+        getMedicamentos().add(medicamento);
     }
 
     public LocalDateTime getFechaHora() {
