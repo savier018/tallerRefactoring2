@@ -78,4 +78,12 @@ public class Consulta {
     public void setServicioMedico(ServicioMedico servicioMedico) {
         this.servicioMedico = servicioMedico;
     }
+    public LocalDateTime getFechaHora() {
+        return fechaHora;
+    }
+
+    public void setFechaHora(LocalDateTime fechaHora) {
+        this.fechaHora = fechaHora;
+    }
+
 }

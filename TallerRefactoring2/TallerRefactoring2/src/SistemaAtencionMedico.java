@@ -72,5 +72,15 @@ public class SistemaAtencionMedico {
         }
         return null;
     }
+    public List<Paciente> getPacientes() {
+        return Collections.unmodifiableList(pacientes);
+    }
 
+    public List<Medico> getMedicos() {
+        return Collections.unmodifiableList(medicos);
+    }
+
+    public List<ServicioMedico> getServiciosMedicos() {
+        return Collections.unmodifiableList(serviciosMedicos);
+    }
 }

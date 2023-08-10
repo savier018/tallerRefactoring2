@@ -11,7 +11,7 @@ public class HistorialMedico {
     }
 
     public List<Consulta> getConsultas() {
-        return consultas;
+        return Collections.unmodifiableList(consultas);
     }
 
     public void setConsultas(List<Consulta> consultas) {
@@ -24,5 +24,12 @@ public class HistorialMedico {
 
     public void setRecetasMedicas(List<RecetaMedica> recetasMedicas) {
         this.recetasMedicas = recetasMedicas;
+    }
+    public void agregarConsulta(Consulta consulta) {
+        consultas.add(consulta);
+    }
+
+    public void agregarReceta(RecetaMedica receta) {
+        recetasMedicas.add(receta);
     }
 }
